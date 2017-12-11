@@ -223,11 +223,13 @@ class Interval<T extends Comparable<T>> {
 
   /// The maximal interval which is enclosed in each interval in [intervals].
   ///
-  /// If [intervals] is empty or they do not overlap, `null` is returned.
+  /// If [intervals] is empty, the returned interval contains all values.
+  ///
+  /// If [intervals] do not overlap, `null` is returned.
   factory Interval.intersectAll(Iterable<Interval<T>> intervals) {
 
     var iterator = intervals.iterator;
-    if (!iterator.moveNext()) return null;
+    if (!iterator.moveNext()) return new Interval.all();
     var interval = iterator.current;
     var lower = interval.lower;
     var upper = interval.upper;
