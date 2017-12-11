@@ -270,6 +270,16 @@ class Interval<T extends Comparable<T>> {
         upperClosed: upperClosed);
   }
 
+  /// Returns the intersection of `this` interval with [other].
+  ///
+  /// If the intervals do not intersect, `null` is returned.
+  Interval<T> intersect(Interval<T> other) => new Interval.intersectAll([this,other]);
+
+  /// Returns minimal interval that [encloses] both `this` and [other].
+  Interval<T> enclose(Interval<T> other) => new Interval.encloseAll([this,other]);
+
+
+
   /// Whether `this` contains [test].
   bool contains(T test) {
     if (lower != null) {
