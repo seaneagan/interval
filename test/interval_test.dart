@@ -2,7 +2,7 @@
 library interval.test;
 
 import 'package:interval/interval.dart';
-import 'package:unittest/unittest.dart';
+import 'package:test/test.dart';
 
 main() {
   group('Interval', () {
@@ -107,6 +107,50 @@ main() {
               new Interval.open(0, 1)]);
           expect(interval.lowerClosed, isFalse);
           expect(interval.upperClosed, isFalse);
+        });
+
+      });
+
+      group('intersectAll', () {
+
+        test('should return null if iterable is empty', () {
+          var interval = new Interval.intersectAll([]);
+          expect(interval, null);
+        });
+
+        test('should return null when input interval do not overlap', () {
+          var interval = new Interval.intersectAll([
+            new Interval.atMost(0),
+            new Interval.atLeast(1)]);
+          expect(interval, null);
+        });
+
+        test('should have bounds matching extreme input interval bounds', () {
+          var interval = new Interval.intersectAll([
+            new Interval.closed(0, 3),
+            new Interval.closed(-1, 1),
+            new Interval.closed(-8, 10),
+            new Interval.closed(-5, 7)]);
+          expect(interval.lower, 0);
+          expect(interval.upper, 1);
+        });
+
+        test('should have open bound when any corresponding extreme input '
+            'interval bound does', () {
+          var interval = new Interval.intersectAll([
+            new Interval.closedOpen(0, 1),
+            new Interval.openClosed(0, 1)]);
+          expect(interval.lowerClosed, isFalse);
+          expect(interval.upperClosed, isFalse);
+        });
+
+        test('should have closed bound when all extreme input interval bounds '
+            'do', () {
+          var interval = new Interval.intersectAll([
+            new Interval.closed(0, 1),
+            new Interval.closed(0, 1)]);
+          expect(interval.lowerClosed, isTrue);
+          expect(interval.upperClosed, isTrue);
         });
 
       });

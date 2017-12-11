@@ -221,6 +221,67 @@ class Interval<T extends Comparable<T>> {
         upperClosed: upperClosed);
   }
 
+  /// The maximal interval which is enclosed in each interval in [intervals].
+  ///
+  /// If [intervals] is empty, the returned interval contains all values.
+  ///
+  /// If [intervals] do not overlap, `null` is returned.
+  factory Interval.intersectAll(Iterable<Interval<T>> intervals) {
+
+    var iterator = intervals.iterator;
+    if (!iterator.moveNext()) return new Interval.all();
+    var interval = iterator.current;
+    var lower = interval.lower;
+    var upper = interval.upper;
+    var lowerClosed = interval.lowerClosed;
+    var upperClosed = interval.upperClosed;
+    while (iterator.moveNext()) {
+      interval = iterator.current;
+      if (lower == null) {
+        lower = interval.lower;;
+        lowerClosed = interval.lowerClosed;
+      } else {
+        if (interval.lower != null) {
+          var cmp =  Comparable.compare(lower, interval.lower);
+          if (cmp<=0) {
+            lower = interval.lower;
+            lowerClosed = (cmp!=0||lowerClosed) && interval.lowerClosed;
+          }
+        }
+      }
+      if (upper == null) {
+        upper = interval.upper;
+        upperClosed = interval.upperClosed;
+      } else {
+        if (interval.upper != null) {
+          var cmp = Comparable.compare(upper, interval.upper);
+          if (cmp>=0) {
+            upper = interval.upper;
+            upperClosed = (cmp!=0||upperClosed) && interval.upperClosed;
+          }
+        }
+      }
+    }
+    var cmp = Comparable.compare(lower, upper);
+    if (cmp>0) return null;
+    if (cmp==0&&(!upperClosed||!lowerClosed)) return null;
+    return new Interval<T>(
+        lower: lower,
+        upper: upper,
+        lowerClosed: lowerClosed,
+        upperClosed: upperClosed);
+  }
+
+  /// Returns the intersection of `this` interval with [other].
+  ///
+  /// If the intervals do not intersect, `null` is returned.
+  Interval<T> intersect(Interval<T> other) => new Interval.intersectAll([this,other]);
+
+  /// Returns minimal interval that [encloses] both `this` and [other].
+  Interval<T> enclose(Interval<T> other) => new Interval.encloseAll([this,other]);
+
+
+
   /// Whether `this` contains [test].
   bool contains(T test) {
     if (lower != null) {
@@ -260,6 +321,9 @@ class Interval<T extends Comparable<T>> {
     }
     return true;
   }
+
+  /// Whether the intersection of `this` and [other] is not empty.
+  bool intersects(Interval<T> other) => intersect(other)!=null;
 
   /// Whether the union of `this` and [other] is connected (i.e. is an
   /// [Interval]).
