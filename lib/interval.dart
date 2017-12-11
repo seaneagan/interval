@@ -320,6 +320,9 @@ class Interval<T extends Comparable<T>> {
     return true;
   }
 
+  /// Whether the intersection of `this` and [other] is not empty.
+  bool intersects(Interval<T> other) => intersect(other)!=null;
+
   /// Whether the union of `this` and [other] is connected (i.e. is an
   /// [Interval]).
   bool connectedTo(Interval<T> other) {
