@@ -4,4 +4,4 @@ author: Sean Eagan <seaneagan1@gmail.com>
 description: Provdes an Interval class, a contiguous set of values.
 homepage: https://github.com/seaneagan/interval
 dev_dependencies:
-  unittest: any
+  test: any
