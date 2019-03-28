@@ -1,6 +1,6 @@
 name: xrange
 version: 0.0.2
-author:
+authors:
   - Sean Eagan <seaneagan1@gmail.com>
   - Ilia Gyrdymov <ilgyrd@gmail.com>
 description: Provdes a Range class, a contiguous set of values.
