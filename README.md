@@ -1,12 +1,14 @@
 This is a fork of [Interval](https://github.com/seaneagan/interval)
 
+## XRange
+
 Provides the `Range` class, a contiguous set of values.
 
 If an Interval contains two values, it also contains all values between
 them.  It may have an upper and lower bound, and those bounds may be
 open or closed.
 
-##Usage
+## Usage
 
 ```dart
 import 'package:xrange/range.dart';
