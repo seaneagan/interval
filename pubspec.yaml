@@ -1,8 +1,8 @@
 name: xrange
 version: 0.0.1
 author: Sean Eagan <seaneagan1@gmail.com>, Ilia Gyrdymov <ilgyrd@gmail.com>
-description: Provdes an Interval class, a contiguous set of values.
-homepage: https://github.com/gyrdym/interval
+description: Provdes a Range class, a contiguous set of values.
+homepage: https://github.com/gyrdym/xrange
 
 environment:
   sdk: '>=2.2.0 <3.0.0'
