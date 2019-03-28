@@ -1,14 +1,3 @@
-This is a fork of [Interval](https://github.com/seaneagan/interval)
-
-Provides the `Range` class, a contiguous set of values.
-
-If an Interval contains two values, it also contains all values between
-them.  It may have an upper and lower bound, and those bounds may be
-open or closed.
-
-##Usage
-
-```dart
 import 'package:xrange/range.dart';
 
 void main() {
@@ -22,4 +11,3 @@ void main() {
     print('Apparently, you are from the future!');
   }
 }
-```
