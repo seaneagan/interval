@@ -1,4 +1,4 @@
-This is a fork of [Interval](https://github.com/seaneagan/interval)
+This is a fork of [Interval library](https://github.com/seaneagan/interval)
 
 ## XRange lib
 
