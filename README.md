@@ -1,6 +1,6 @@
 This is a fork of [Interval](https://github.com/seaneagan/interval)
 
-## XRange
+## XRange lib
 
 Provides the `Range` class, a contiguous set of values.
 
