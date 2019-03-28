@@ -1,8 +1,8 @@
-name: interval
-version: 0.2.0
-author: Sean Eagan <seaneagan1@gmail.com>
+name: xrange
+version: 0.0.1
+author: Sean Eagan <seaneagan1@gmail.com>, Ilia Gyrdymov <ilgyrd@gmail.com>
 description: Provdes an Interval class, a contiguous set of values.
-homepage: https://github.com/seaneagan/interval
+homepage: https://github.com/gyrdym/interval
 
 environment:
   sdk: '>=2.2.0 <3.0.0'
@@ -11,3 +11,4 @@ dev_dependencies:
   test: ^1.2.0
   build_runner: ^1.1.2
   build_test: ^0.10.2
+  pedantic: 1.1.0
