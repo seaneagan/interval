@@ -1,7 +1,13 @@
 name: interval
-version: 0.1.0
+version: 0.2.0
 author: Sean Eagan <seaneagan1@gmail.com>
 description: Provdes an Interval class, a contiguous set of values.
 homepage: https://github.com/seaneagan/interval
+
+environment:
+  sdk: '>=2.2.0 <3.0.0'
+
 dev_dependencies:
-  unittest: any
+  test: ^1.2.0
+  build_runner: ^1.1.2
+  build_test: ^0.10.2

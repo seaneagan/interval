@@ -21,7 +21,7 @@ import 'package:interval/interval.dart';
 
 // Date intervals
 var activeDates = new Interval<DateTime>.closed(date1, date2);
-if(activeDates.contains(new DateTime.now()) {
+if (activeDates.contains(new DateTime.now()) {
   print('Item is active!');
 }
 

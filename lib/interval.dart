@@ -1,6 +1,3 @@
-
-library interval;
-
 /// A contiguous set of values.
 ///
 /// If an interval [contains] two values, it also contains all values between
@@ -276,7 +273,7 @@ class Interval<T extends Comparable<T>> {
   int get hashCode => lower.hashCode ^ upper.hashCode ^ lowerClosed.hashCode ^
       upperClosed.hashCode;
 
-  bool operator == (Interval<T> other) =>
+  bool operator == (Object other) =>
       other is Interval<T> &&
       lower == other.lower &&
       upper == other.upper &&
