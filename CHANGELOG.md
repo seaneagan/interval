@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.3
+- `ZRange` class introduced
+
 ## 0.0.2
 - `pubspec.yaml`: `author` section corrected
 

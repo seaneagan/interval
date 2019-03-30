@@ -1,9 +1,9 @@
 name: xrange
-version: 0.0.2
+version: 0.0.3
 authors:
-  - Sean Eagan <seaneagan1@gmail.com>
   - Ilia Gyrdymov <ilgyrd@gmail.com>
-description: Provdes a Range class, a contiguous set of values.
+  - Sean Eagan <seaneagan1@gmail.com>
+description: Provdes a Range class, a contiguous set of values, and a ZRange class - an integer values interval with possibility to generate its values
 homepage: https://github.com/gyrdym/xrange
 
 environment:

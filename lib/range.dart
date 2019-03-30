@@ -91,8 +91,8 @@ class Range<T extends Comparable<T>> {
   /// The minimal interval which [contains] each value in [values].
   ///
   /// If [values] is empty, the returned interval contains all values.
-  factory Range.span(Iterable<T> all) {
-    final iterator = all.iterator;
+  factory Range.span(Iterable<T> values) {
+    final iterator = values.iterator;
     final hasNext = iterator.moveNext();
     if (!hasNext) return Range<T>.all();
     var upper = iterator.current;
