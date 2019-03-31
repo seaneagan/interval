@@ -30,7 +30,7 @@ void main() {
 }
 ```
 
-### XRange
+### ZRange
 
 ```dart
 import 'package:xrange/zrange.dart';

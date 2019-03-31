@@ -25,7 +25,7 @@ class ZRange extends Range<num> {
 
   ZRange.singleton(int value) : super.singleton(value);
 
-  int get length => firstValue.abs() + lastValue.abs() + 1;
+  int get length => lastValue.abs() - firstValue.abs() + 1;
 
   int get firstValue => (lowerClosed ? lower : lower + 1) as int;
 
