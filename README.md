@@ -1,3 +1,6 @@
+[![pub package](https://img.shields.io/pub/v/xrange.svg)](https://pub.dartlang.org/packages/xrange)
+[![Gitter Chat](https://badges.gitter.im/gyrdym/gyrdym.svg)](https://gitter.im/gyrdym/)
+
 This is a fork of [Interval library](https://github.com/seaneagan/interval)
 
 ## XRange lib
@@ -44,5 +47,4 @@ void main() {
 }
 ```
 
-Please, pay attention to `values` method - it is a generator function, so there is no need to save the range values in 
-a variable before iterating.
+Pay attention to `values` method - it is a generator function, so use all the benefits of this.

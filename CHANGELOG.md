@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.5
+- `README` updated: badges added, text corrected
+
 ## 0.0.4
 - `ZRange`: length calculation fixed
 
