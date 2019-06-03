@@ -66,6 +66,120 @@ void main() {
       });
     });
   });
+
+  group('ZRange.firstValue', () {
+    test('should return `null` if the range is (-∞; <finite_number>]', () {
+      final range = ZRange.atMost(-1);
+      expect(range.firstValue, isNull);
+    });
+
+    test('should return a finite number if the range is '
+        '[<finite_number>; ∞+)', () {
+      final range = ZRange.atLeast(15);
+      expect(range.firstValue, 15);
+    });
+
+    test('should return `null` if the range is (-∞; +∞)', () {
+      final range = ZRange.all();
+      expect(range.firstValue, isNull);
+    });
+
+    test('should return a finite number if the range is open', () {
+      final range = ZRange.open(-20, 30);
+      expect(range.firstValue, -19);
+    });
+
+    test('should return a finite number if the range is open-closed', () {
+      final range = ZRange.openClosed(-20, 30);
+      expect(range.firstValue, -19);
+    });
+
+    test('should return a finite number if the range is closed', () {
+      final range = ZRange.closed(-20, 30);
+      expect(range.firstValue, -20);
+    });
+
+    test('should return a finite number if the range is closed-open', () {
+      final range = ZRange.closedOpen(-20, 30);
+      expect(range.firstValue, -20);
+    });
+  });
+
+  group('ZRange.lastValue', () {
+    test('should return a finite number if the range is '
+        '(-∞; <finite_number>]', () {
+      final range = ZRange.atMost(-1);
+      expect(range.lastValue, -1);
+    });
+
+    test('should return a finite number if the range is '
+        '[<finite_number>; ∞+)', () {
+      final range = ZRange.atLeast(15);
+      expect(range.lastValue, isNull);
+    });
+
+    test('should return `null` if the range is (-∞; +∞)', () {
+      final range = ZRange.all();
+      expect(range.lastValue, isNull);
+    });
+
+    test('should return a finite number if the range is open', () {
+      final range = ZRange.open(-20, 30);
+      expect(range.lastValue, 29);
+    });
+
+    test('should return a finite number if the range is open-closed', () {
+      final range = ZRange.openClosed(-20, 30);
+      expect(range.lastValue, 30);
+    });
+
+    test('should return a finite number if the range is closed', () {
+      final range = ZRange.closed(-20, 30);
+      expect(range.lastValue, 30);
+    });
+
+    test('should return a finite number if the range is closed-open', () {
+      final range = ZRange.closedOpen(-20, 30);
+      expect(range.lastValue, 29);
+    });
+  });
+
+  group('ZRange.length', () {
+    test('should return `null` if the range is (-∞; <finite_number>]', () {
+      final range = ZRange.atMost(-1);
+      expect(range.length, isNull);
+    });
+
+    test('should return `null` if the range is [<finite_number>; ∞+)', () {
+      final range = ZRange.atLeast(15);
+      expect(range.length, isNull);
+    });
+
+    test('should return `null` if the range is (-∞; +∞)', () {
+      final range = ZRange.all();
+      expect(range.length, isNull);
+    });
+
+    test('should return a finite number if the range is (-5; +5)', () {
+      final range = ZRange.open(-5, 5);
+      expect(range.length, 9);
+    });
+
+    test('should return a finite number if the range is (0; +5)', () {
+      final range = ZRange.open(0, 5);
+      expect(range.length, 4);
+    });
+
+    test('should return a finite number if the range is (-10; -5)', () {
+      final range = ZRange.open(-10, -5);
+      expect(range.length, 4);
+    });
+
+    test('should return a finite number if the range is [-10; -5]', () {
+      final range = ZRange.closed(-10, -5);
+      expect(range.length, 6);
+    });
+  });
 }
 
 void testRange(String description, List<List<dynamic>> params,
