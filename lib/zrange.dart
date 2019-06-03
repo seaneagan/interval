@@ -25,11 +25,21 @@ class ZRange extends Range<num> {
 
   ZRange.singleton(int value) : super.singleton(value);
 
-  int get length => lastValue.abs() - firstValue.abs() + 1;
+  int get length => !bounded ? null : lastValue - firstValue + 1;
 
-  int get firstValue => (lowerClosed ? lower : lower + 1) as int;
+  int get firstValue {
+    if (lower == null) {
+      return null;
+    }
+    return (lowerClosed ? lower : lower + 1).toInt();
+  }
 
-  int get lastValue => (upperClosed ? upper : upper - 1) as int;
+  int get lastValue {
+    if (upper == null) {
+      return null;
+    }
+    return (upperClosed ? upper : upper - 1).toInt();
+  }
 
   Iterable<int> values({int step = 1}) sync* {
     if (step <= 0) {
@@ -39,8 +49,6 @@ class ZRange extends Range<num> {
       throw Exception('There is no bound, '
           '${lower == null ? '`lower`' : '`upper`'} is not defined');
     }
-    for (int val = firstValue; val <= lastValue; val += step) {
-      yield val;
-    }
+    for (int val = firstValue; val <= lastValue; val += step) yield val;
   }
 }
