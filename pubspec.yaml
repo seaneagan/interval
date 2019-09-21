@@ -1,16 +1,17 @@
 name: xrange
-version: 0.0.6
+version: 0.0.7
 authors:
   - Ilia Gyrdymov <ilgyrd@gmail.com>
   - Sean Eagan <seaneagan1@gmail.com>
-description: Provdes a Range class, a contiguous set of values, and a ZRange class - an integer values interval with possibility to generate its values
+description: Provides classes and methods allowing to work with ranges
 homepage: https://github.com/gyrdym/xrange
 
 environment:
   sdk: '>=2.2.0 <3.0.0'
 
 dev_dependencies:
-  test: ^1.2.0
   build_runner: ^1.1.2
   build_test: ^0.10.2
-  pedantic: 1.1.0
+  grinder: ^0.8.3
+  ml_tech: ^0.0.8
+  test: ^1.2.0

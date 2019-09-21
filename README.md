@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/gyrdym/xrange.svg?branch=master)](https://travis-ci.com/gyrdym/xrange)
+[![Coverage Status](https://coveralls.io/repos/github/gyrdym/xrange/badge.svg?branch=master)](https://coveralls.io/github/gyrdym/xrange?branch=master)
 [![pub package](https://img.shields.io/pub/v/xrange.svg)](https://pub.dartlang.org/packages/xrange)
 [![Gitter Chat](https://badges.gitter.im/gyrdym/gyrdym.svg)](https://gitter.im/gyrdym/)
 
@@ -5,13 +7,14 @@ This is a fork of [Interval library](https://github.com/seaneagan/interval)
 
 ## XRange lib
 
-Provides the `Range` class, a contiguous set of values, and the `ZRange` class, that along with functionality of 
-`Range` class can also generate values of arithmetic progression in a specific diapason. This range can contain just 
-integer numbers, that's why `Z` is used as a prefix for the class name (the letter `Z` denotes the set
-of all integers in mathematics).
+Provides the `Range` class, a contiguous set of values, and the `NumRange` class, that along with functionality of 
+`Range` class can also generate values of arithmetic progression in a specific diapason.
 
 If a range contains two values, it also contains all values between them.  It may have an upper and lower bound, 
 and those bounds may be open or closed.
+
+Also the library contains `integers` generator function, that is based on `NumRange` class. It produces integer values 
+from a specific closed diapason.
 
 ## Usage
 
@@ -33,13 +36,13 @@ void main() {
 }
 ```
 
-### ZRange
+### NumRange
 
 ```dart
-import 'package:xrange/zrange.dart';
+import 'package:xrange/num_range.dart';
 
 void main() {
-  final range = ZRange.closed(-10, 10);
+  final range = NumRange.closed(-10, 10);
   
   for (final value in range.values(step: 2)) {
     print(value); // it yields numbers from -10 to 10 with step equals 2
@@ -48,3 +51,18 @@ void main() {
 ```
 
 Pay attention to `values` method - it is a generator function, so use all the benefits of this.
+
+### integers
+
+````dart
+import 'package:xrange/integers.dart';
+
+void main() {
+  for (final value in integers(-10, 10)) {
+    print(value); // it yields numbers from -10 to 10 with step equals 2
+  }
+}
+````
+
+The `integers` function returns a lazy iterable, thus it consumes little memory, since the whole collection is not 
+being generated when `integers` is called.

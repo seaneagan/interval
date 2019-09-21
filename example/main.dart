@@ -1,5 +1,5 @@
 import 'package:xrange/range.dart';
-import 'package:xrange/zrange.dart';
+import 'package:xrange/num_range.dart';
 
 void range() {
   final date1 = DateTime(2015);
@@ -14,7 +14,7 @@ void range() {
 }
 
 void zrange() {
-  final range = ZRange.closed(-10, 10);
+  final range = NumRange.closed(-10, 10);
   for (final value in range.values(step: 2)) {
     print(value); // it yields numbers from -10 to 10 with step equals 2
   }
