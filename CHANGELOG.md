@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.7
+- `ZRange` renamed to `NumRange`
+- `integers` function added 
+
 ## 0.0.6
 - `ZRange`: firstValue, lastValue, length calculation fixed
 

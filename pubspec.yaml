@@ -3,7 +3,7 @@ version: 0.0.7
 authors:
   - Ilia Gyrdymov <ilgyrd@gmail.com>
   - Sean Eagan <seaneagan1@gmail.com>
-description: Provdes a Range class, a contiguous set of values, and a ZRange class - an integer values interval with possibility to generate its values
+description: Provides classes and methods allowing to work with ranges
 homepage: https://github.com/gyrdym/xrange
 
 environment:
