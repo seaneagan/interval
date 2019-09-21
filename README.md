@@ -63,3 +63,6 @@ void main() {
   }
 }
 ````
+
+The `integers` function returns a lazy iterable, thus it consumes little memory, since the whole collection is not 
+being generated when `integers` is called.
