@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:xrange/num_range.dart';
+import 'package:xrange/src/num_range/num_range.dart';
 
 void main() {
   group('NumRange.closed', () {
@@ -11,11 +11,6 @@ void main() {
         <dynamic>[   -4,      4,      2,     [-4, -2, 0, 2, 4]],
         <dynamic>[   -4,      4,      3,        [-4, -1, 2]   ],
       ], (int lower, int upper) => NumRange.closed(lower, upper));
-
-    test('should return proper range length', () {
-      final range = NumRange.closed(1, 4);
-      expect(range.length, 4);
-    });
   });
 
   group('NumRange.open', () {
@@ -27,11 +22,6 @@ void main() {
         <dynamic>[   -4,      4,      2,     [-3, -1, 1, 3] ],
         <dynamic>[   -4,      4,      3,      [-3, 0, 3]    ],
       ], (int lower, int upper) => NumRange.open(lower, upper));
-
-    test('should return proper range length', () {
-      final range = NumRange.open(1, 4);
-      expect(range.length, 2);
-    });
   });
 
   group('NumRange (common)', () {
@@ -141,43 +131,6 @@ void main() {
     test('should return a finite number if the range is closed-open', () {
       final range = NumRange.closedOpen(-20, 30);
       expect(range.lastValue, 29);
-    });
-  });
-
-  group('NumRange.length', () {
-    test('should return `null` if the range is (-∞; <finite_number>]', () {
-      final range = NumRange.atMost(-1);
-      expect(range.length, isNull);
-    });
-
-    test('should return `null` if the range is [<finite_number>; ∞+)', () {
-      final range = NumRange.atLeast(15);
-      expect(range.length, isNull);
-    });
-
-    test('should return `null` if the range is (-∞; +∞)', () {
-      final range = NumRange.all();
-      expect(range.length, isNull);
-    });
-
-    test('should return a finite number if the range is (-5; +5)', () {
-      final range = NumRange.open(-5, 5);
-      expect(range.length, 9);
-    });
-
-    test('should return a finite number if the range is (0; +5)', () {
-      final range = NumRange.open(0, 5);
-      expect(range.length, 4);
-    });
-
-    test('should return a finite number if the range is (-10; -5)', () {
-      final range = NumRange.open(-10, -5);
-      expect(range.length, 4);
-    });
-
-    test('should return a finite number if the range is [-10; -5]', () {
-      final range = NumRange.closed(-10, -5);
-      expect(range.length, 6);
     });
   });
 }
