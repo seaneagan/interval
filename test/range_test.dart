@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:xrange/range.dart';
+import 'package:xrange/src/range/range.dart';
 
 void main() {
   group('Interval', () {
