@@ -1,16 +1,13 @@
 name: xrange
-version: 0.0.8
-authors:
-  - Ilia Gyrdymov <ilgyrd@gmail.com>
-  - Sean Eagan <seaneagan1@gmail.com>
+version: 0.0.9
 description: Provides classes and methods allowing to work with ranges
 homepage: https://github.com/gyrdym/xrange
 
 environment:
-  sdk: '>=2.2.0 <3.0.0'
+  sdk: '>=2.7.0 <3.0.0'
 
 dependencies:
-  injector: ^1.0.8
+  injector: ^1.0.9
 
 dev_dependencies:
   build_runner: ^1.1.2

@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.9
+- injector lib update supported
+
 ## 0.0.8
 - `integers`: `lowerClosed` and `upperClosed` arguments added
 

@@ -6,5 +6,4 @@ Injector injector;
 
 Injector getDependencies() =>
     injector ??= Injector()
-      ..registerSingleton<NumRangeFactory>(
-              (injector) => const NumRangeFactoryImpl());
+      ..registerSingleton<NumRangeFactory>(() => const NumRangeFactoryImpl());

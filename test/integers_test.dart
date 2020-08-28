@@ -46,7 +46,7 @@ void main() {
           .thenReturn(returnedIndices);
 
       injector
-          .registerSingleton<NumRangeFactory>((_) => numRangeFactoryMock);
+          .registerSingleton<NumRangeFactory>(() => numRangeFactoryMock);
 
       final actualIndices = integers(-5, 5,
           lowerClosed: lowerClosed,

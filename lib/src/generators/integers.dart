@@ -7,7 +7,7 @@ Iterable<int> integers(int lower, int upper, {
   bool upperClosed = true,
 }) {
   final rangeFactory = getDependencies()
-      .getDependency<NumRangeFactory>();
+      .get<NumRangeFactory>();
   final range = rangeFactory.create(
     lower: lower,
     upper: upper,
