@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/gyrdym/xrange.svg?branch=master)](https://travis-ci.com/gyrdym/xrange)
+[![Build Status](https://github.com/gyrdym/xrange/workflows/CI%20pipeline/badge.svg)](https://github.com/gyrdym/xrange/actions?query=branch%3Amaster+)
 [![Coverage Status](https://coveralls.io/repos/github/gyrdym/xrange/badge.svg?branch=master)](https://coveralls.io/github/gyrdym/xrange?branch=master)
 [![pub package](https://img.shields.io/pub/v/xrange.svg)](https://pub.dartlang.org/packages/xrange)
 [![Gitter Chat](https://badges.gitter.im/gyrdym/gyrdym.svg)](https://gitter.im/gyrdym/)
