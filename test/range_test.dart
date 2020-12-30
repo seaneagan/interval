@@ -2,7 +2,7 @@ import 'package:test/test.dart';
 import 'package:xrange/src/range/range.dart';
 
 void main() {
-  group('Interval', () {
+  group('Range', () {
     group('constructors', () {
 
       test('should throw when upper less than lower', () {

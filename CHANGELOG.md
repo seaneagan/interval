@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.0
+- `injector` dependency removed
+- `lib/integers.dart`, `lib/range.dart` export files removed
+- github actions set up
+
 ## 0.0.9
 - injector lib update supported
 
