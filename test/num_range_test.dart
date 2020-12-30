@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:xrange/src/num_range/num_range.dart';
+import 'package:xrange/src/range/num_range.dart';
 
 void main() {
   group('NumRange.closed', () {
@@ -26,13 +26,13 @@ void main() {
 
   group('NumRange (common)', () {
     group('values', () {
-      test('should throw an argument value if passed step is equal to '
+      test('should throw an argument error if passed step is equal to '
           'zero', () {
         final range = NumRange.open(-1, 10);
         expect(() => range.values(step: 0), throwsArgumentError);
       });
 
-      test('should throw an argument value if passed step is less than '
+      test('should throw an argument error if passed step is less than '
           'zero', () {
         final range = NumRange.open(-1, 10);
         expect(() => range.values(step: -1), throwsArgumentError);

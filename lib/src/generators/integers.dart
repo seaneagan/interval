@@ -1,4 +1,4 @@
-import 'package:xrange/num_range.dart';
+import 'package:xrange/src/range/num_range.dart';
 
 Iterable<int> integers(int lower, int upper, {
   int step = 1,

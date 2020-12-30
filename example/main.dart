@@ -1,5 +1,5 @@
 import 'package:xrange/src/range/range.dart';
-import 'package:xrange/src/num_range/num_range.dart';
+import 'package:xrange/src/range/num_range.dart';
 
 void range() {
   final date1 = DateTime(2015);

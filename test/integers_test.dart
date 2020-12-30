@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:xrange/integers.dart';
+import 'package:xrange/src/generators/integers.dart';
 
 void main() {
   group('integers', () {
