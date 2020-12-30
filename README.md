@@ -21,11 +21,11 @@ from a specific closed diapason.
 ### Range
 
 ```dart
-import 'package:xrange/range.dart';
+import 'package:xrange/xrange.dart';
 
 void main() {
   final date1 = DateTime(2015);
-  final date2 = DateTime(2021);
+  final date2 = DateTime(2221);
   final dates = Range<DateTime>.closed(date1, date2);
 
   if (dates.contains(DateTime.now())) {
@@ -39,7 +39,7 @@ void main() {
 ### NumRange
 
 ```dart
-import 'package:xrange/num_range.dart';
+import 'package:xrange/xrange.dart';
 
 void main() {
   final range = NumRange.closed(-10, 10);
@@ -55,7 +55,7 @@ Pay attention to `values` method - it is a generator function, so use all the be
 ### integers
 
 ````dart
-import 'package:xrange/integers.dart';
+import 'package:xrange/xrange.dart';
 
 void main() {
   for (final value in integers(-10, 10)) {
