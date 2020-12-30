@@ -1,4 +1,3 @@
-# Don’t commit the following directories created by pub.
 .packages
 .pub/
 build/
@@ -6,10 +5,11 @@ build/
 # Directory created by dartdoc
 doc/api/
 /.dart_tool/
+pubspec.lock
 
 .idea
 
-# Or the files created by dart2js.
+# Files created by dart2js.
 *.dart.js
 *.dart.precompiled.js
 *.js_

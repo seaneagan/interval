@@ -6,9 +6,6 @@ homepage: https://github.com/gyrdym/xrange
 environment:
   sdk: '>=2.7.0 <3.0.0'
 
-dependencies:
-  injector: ^1.0.9
-
 dev_dependencies:
   build_runner: ^1.1.2
   build_test: ^0.10.2
